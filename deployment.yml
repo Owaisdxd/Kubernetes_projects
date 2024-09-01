@@ -1,0 +1,19 @@
+apiVersion: apps/v1              #api version
+kind: Deployment                 # kind of pod
+metadata:                           
+  labels:                        #labels for to connect to services if needed
+    app: test-deploy                
+  name: test-deploy              #pod name
+spec:                         
+  replicas: 3                    # number of pods
+  selector:                     
+    matchLabels:                 
+      app: test-deploy
+  template:
+    metadata:
+      labels:
+        app: test-deploy
+    spec:
+      containers:
+      - image: nginx
+        name: nginx

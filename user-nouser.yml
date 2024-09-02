@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-me   #Defining Pod name
+spec:
+  containers:
+  - name: my-container-1      
+    image: ubuntu
+    command:
+    - "sleep"  
+    - "5623"
+    securityContext:   #securing container by defining user
+      runAsUser: 1011
+  - name: my-container-2    #unsecure container no user is define 
+    image: ubuntu
+    command: ["sleep","4536"]
+    #you can access the container running the below command in your kubernetes environment
+    #kubectl exec test-me -c my-container-1 -- whoami
+    #pod name= test-me
+    #-c = container name
+    #or
+    # kubectl exec -it test-me -c my-container-1 sh
+    

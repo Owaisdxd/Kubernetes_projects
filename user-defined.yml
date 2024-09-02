@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: two-pod  #pod name
+spec:
+  securityContext:    #this user will be given to second(test-2)container
+    runAsUser: 1009
+  containers:
+  - name: test-1
+    image: ubuntu
+    command: ["sleep","5435"]
+    securityContext:           # this user is defined for test-1 container
+      runAsUser: 1005
+  
+  - name: test-2
+    image: ubuntu
+    command: 
+    - "sleep"
+    - "3423"
+
+  # users are defined
+  # kubectl exec two-pod -c test-1 -- whoami  (To check which access you have )
+  # 
+  #
+  #
+  #

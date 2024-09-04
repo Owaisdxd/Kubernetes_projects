@@ -1,0 +1,12 @@
+# 3 controle plane with three worker nodes for redundency worker nodes are controlled by controle nodes but if controle nodes fails your service/clusters will be fail 
+# 
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+- role: control-plane
+- role: control-plane
+- role: worker
+- role: worker
+- role: worker
+

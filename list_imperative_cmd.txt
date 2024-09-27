@@ -1,0 +1,3 @@
+#To create a pod file
+#kubectl run podname --image imagename --dry-run=client -o yaml > filename.yaml
+# Dry run is to check the command is accurate or not 

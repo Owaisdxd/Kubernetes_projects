@@ -6,3 +6,4 @@
 #kubectl get pod name_of_the_pod (to get the specific pod)
 #kubectl describe pod name_of_the_pod (It will show you the complete detail for given pod)
 #kubectl get pods -o wide (It will show you the minimum details ofr all the pods in the current namespace)
+#
